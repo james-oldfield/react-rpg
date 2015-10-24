@@ -20,19 +20,6 @@ describe("components/react-rpg", () => {
     const divNode = TestUtils
       .findRenderedDOMComponentWithTag(rendered, "div");
 
-    expect(divNode).to.have.property("innerHTML", "Edit me!");
-  });
-
-  it("has expected content with shallow render", () => {
-    // This is a "shallow" render that renders only the current component
-    // without using the actual DOM.
-    //
-    // https://facebook.github.io/react/docs/test-utils.html#shallow-rendering
-    const renderer = TestUtils.createRenderer();
-    renderer.render(<Component />);
-    const output = renderer.getRenderOutput();
-
-    expect(output.type).to.equal("div");
-    expect(output.props.children).to.contain("Edit me");
+    expect(divNode).to.have.property("innerHTML", "");
   });
 });
