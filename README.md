@@ -5,7 +5,7 @@ react-rpg :camera:
 ## what
 **react-rpg** is a lightweight, no-nonsense **responsive photo grid** component for reactjs.
 
-# [DEMO](james-oldfield.github.io/react-rpg)
+# [DEMO](http://james-oldfield.github.io/react-rpg)
 
 ![react-rpg](./reactPhotoGrid.png)
 
