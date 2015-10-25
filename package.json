@@ -5,7 +5,8 @@
   "keywords": [
     "responsive images",
     "photo grid",
-    "square image grid"
+    "square image grid",
+    "react-component"
   ],
   "main": "lib/index.js",
   "repository": {

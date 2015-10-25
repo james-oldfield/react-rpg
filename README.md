@@ -22,7 +22,7 @@ To use in a react project, first, install via npm:
 Then require wherever you desire and pass it images as props. See `./demo` for a more thorough example.
 
     ...
-    import ReactRpg from "react-rpg";
+    import { ReactRpg } from 'react-rpg';
 
     const images = [
       {
