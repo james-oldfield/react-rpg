@@ -1,8 +1,0 @@
----
-# Any base overrides can go here.
-
-{
-  rules: {
-    "max-len": [2, 200, 4]
-  }
-}
