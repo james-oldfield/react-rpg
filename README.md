@@ -1,15 +1,17 @@
 react-rpg :camera:
 ===========================
 
+
 ## what
 **react-rpg** is a lightweight, no-nonsense **responsive photo grid** component for reactjs.
 
-![react-rpg](https://photos-6.dropbox.com/t/2/AACGe6Mt3fAYFnf9UNMT9Va64DArRSsOoRP_C81tzPhvbg/12/118529092/png/32x32/1/1445788800/0/2/reactPhotoGrid.png/CMS4wjggASACIAMgBSAHKAIoBw/vyrBxg4aUDu06H8FIX9h8fLs8gEq3siBGHyuf6JKEH0?size_mode=5)
+# [DEMO](james-oldfield.github.io/react-rpg)
+
+![react-rpg](./reactPhotoGrid.png)
 
 The module renders an array of images in square aspect-ratio for the modern, fluid web. **react-rpg** module takes 100% width of the parent container.
 
 ### COMING SOON:
-- Live demo
 - `shallowRender` tests
 - Potentially to make column count a function of browser width for single column on small devices etc: Depending on computation cost of checking browser width all the time.
 
