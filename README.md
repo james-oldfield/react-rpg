@@ -4,6 +4,8 @@ react-rpg 📷
 ## what
 **react-rpg** is a lightweight, no-nonsense **responsive photo grid** component for reactjs.
 
+![react-rpg](https://photos-6.dropbox.com/t/2/AACGe6Mt3fAYFnf9UNMT9Va64DArRSsOoRP_C81tzPhvbg/12/118529092/png/32x32/1/1445788800/0/2/reactPhotoGrid.png/CMS4wjggASACIAMgBSAHKAIoBw/vyrBxg4aUDu06H8FIX9h8fLs8gEq3siBGHyuf6JKEH0?size_mode=5)
+
 The module renders an array of images in square aspect-ratio for the modern, fluid web. **react-rpg** module takes 100% width of the parent container.
 
 ### COMING SOON:
@@ -19,26 +21,26 @@ To use in a react project, first, install via npm:
 
 Then require wherever you desire and pass it images as props. See `./demo` for a more thorough example.
 
-  ...
-  import ReactRpg from "react-rpg";
-  
-  const images = [
-    {
-      url: "url to my image",
-      link: "url to the permalink if required"
+    ...
+    import ReactRpg from "react-rpg";
+
+    const images = [
+      {
+        url: "url to my image",
+        link: "url to the permalink if required"
+      }
+    ];
+
+
+    class App extends React.Component {
+      render() {
+        return (
+          <div className="myApp">
+            <ReactRpg imagesArray={images} columns={3} padding={10} />
+          </div>
+        );
+      }
     }
-  ];
-  
-  
-  class App extends React.Component {
-    render() {
-      return (
-        <div className="myApp">
-          <ReactRpg imagesArray={images} columns={3} padding={10} />
-        </div>
-      );
-    }
-  }
 
 ### Props
 - `imagesArray` (array, default [], required **YES**) - An Array of objects containing *url* property of the absolute url of the photos.

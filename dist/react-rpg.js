@@ -101,11 +101,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    key: "render",
 	    value: function render() {
 	      var _props = this.props;
-	      var columns = _props.columns;
 	      var imagesArray = _props.imagesArray;
 	      var padding = _props.padding;
 	
-	      columns = columns || 3;
+	      var columns = this.props.columns || 3;
 	      var width = Math.floor(100 / columns);
 	
 	      var imageNodes = imagesArray.map(function (arr, index) {
@@ -129,6 +128,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	  imagesArray: _react2["default"].PropTypes.array.isRequired,
 	  columns: _react2["default"].PropTypes.number,
 	  padding: _react2["default"].PropTypes.number
+	};
+	
+	ReactRpg.defaultProps = {
+	  imagesArray: []
 	};
 	module.exports = exports["default"];
 
@@ -178,9 +181,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	      var url = _props.url;
 	      var width = _props.width;
 	      var padding = _props.padding;
-	      var link = _props.link;
 	
-	      link = link || url;
+	      var link = this.props.link || url;
 	
 	      var styles = {
 	        imageGridItem: {
@@ -191,9 +193,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	        },
 	        imageWrapper: {
 	          position: "relative",
-	          width: 100 + "%",
-	          paddingBottom: 100 + "%",
-	          backgroundImage: "url('" + url + "')",
+	          width: "100%",
+	          paddingBottom: "100%",
+	          backgroundImage: "url(" + url + ")",
 	          backgroundSize: "cover",
 	          backgroundPosition: "center center",
 	          backgroundRepeat: "no-repeat"

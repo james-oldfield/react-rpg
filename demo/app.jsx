@@ -16,12 +16,31 @@ const images = [
 ];
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      padding: 10,
+      columns: 3
+    };
+  }
+  paddingChanged(e) {
+    this.setState({ padding: parseInt(e.target.value) });
+  }
+  columnsChanged(e) {
+    this.setState({ columns: parseInt(e.target.value) });
+  }
   render() {
     return (
       <div className="demo">
-        <h1>react-rpg</h1>
+        <h1><a href="https://github.com/James-Oldfield/react-rpg">react-rpg</a></h1>
         <h2>react responsive photo grid</h2>
-        <ReactRpg imagesArray={images} columns={3} padding={10} />
+        <p>adjust padding:</p>
+          <input type="range" min="0" max="100" className="paddingController" value={this.state.padding} onChange={this.paddingChanged.bind(this)} />
+        <p>adjust colums:</p>
+          <input type="range" min="1" max="10" className="columsController" value={this.state.columns} onChange={this.columnsChanged.bind(this)} />
+
+        <ReactRpg imagesArray={images} columns={this.state.columns} padding={this.state.padding} />
       </div>
     );
   }
