@@ -33,3 +33,6 @@ bower_components
 .tmp
 lib
 npm-debug.log
+CONTRIBUTING.md
+DEVELOPMENT.md
+
