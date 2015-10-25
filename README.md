@@ -1,4 +1,4 @@
-react-rpg 📷
+react-rpg :camera:
 ===========================
 
 ## what
