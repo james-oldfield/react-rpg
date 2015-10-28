@@ -1,7 +1,5 @@
 react-rpg :camera:
 ===========================
-
-
 ## what
 **react-rpg** is a lightweight, no-nonsense **responsive photo grid** component for reactjs.
 
@@ -9,11 +7,7 @@ react-rpg :camera:
 
 ![react-rpg](./reactPhotoGrid.png)
 
-The module renders an array of images in square aspect-ratio for the modern, fluid web. **react-rpg** module takes 100% width of the parent container.
-
-### COMING SOON:
-- `shallowRender` tests
-- Potentially to make column count a function of browser width for single column on small devices etc: Depending on computation cost of checking browser width all the time.
+The component renders an array of images in square aspect-ratio for the modern, fluid web. The **react-rpg** component takes 100% width of the parent container using dynamic inline styles.
 
 ## how
 
@@ -21,15 +15,19 @@ To use in a react project, first, install via npm:
 
 `npm i react-rpg --save-dev`
 
-Then require wherever you desire and pass it images as props. See `./demo` for a more thorough example.
+Then require wherever you desire and pass it an array of image objects as props. See `./demo` for a more thorough example.
 
     ...
     import { ReactRpg } from 'react-rpg';
 
     const images = [
       {
-        url: "url to my image",
-        link: "url to the permalink if required"
+        url: "absolute url to the src of the image",
+        link: "absolute url of what to link to"
+      },
+      {
+        url: "http://images.com/myimage.jpg",
+        link: "http://images.com/go-to-me-on-click.html"
       }
     ];
 
@@ -45,7 +43,7 @@ Then require wherever you desire and pass it images as props. See `./demo` for a
     }
 
 ### Props
-- `imagesArray` (array, default [], required **YES**) - An Array of objects containing *url* property of the absolute url of the photos.
+- `imagesArray` (array, default [], required **YES**) - An Array of objects containing *url* property of the absolute url of the photos. Can also pass an optional `link` property that will pass into an `<a href="link">` tag around the image.
 - `columns` (number, default 3, required **NO**) - Sets the number of columns for the photo grid.
 - `padding` (number, default 0, required **NO**) - Sets the padding value in *px* around the images.
 
@@ -54,3 +52,7 @@ Then require wherever you desire and pass it images as props. See `./demo` for a
 There's a few react components that attempt a photo grid component but none seem to be responsive. **react-rpg** attempts to make this easy in a component.
 
 Scaffolded with [Formidable Labs' component boilerplate](https://github.com/FormidableLabs/formidable-react-component-boilerplate), thanks!
+
+### COMING SOON:
+- `shallowRender` tests
+- Potentially to make column count a function of browser width for single column on small devices etc: Depending on computation cost of checking browser width all the time.
