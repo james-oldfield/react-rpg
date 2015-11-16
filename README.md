@@ -9,11 +9,13 @@ react-rpg :camera:
 
 The component renders an array of images in square aspect-ratio for the modern, fluid web. The **react-rpg** component takes 100% width of the parent container using dynamic inline styles.
 
+**react-rpg** replicates a similar grid photo structure to that which Instagram implements with their webapp.
+
 ## how
 
 To use in a react project, first, install via npm:
 
-`npm i react-rpg --save-dev`
+`npm i react-rpg --save`
 
 Then require wherever you desire and pass it an array of image objects as props. See `./demo` for a more thorough example.
 
