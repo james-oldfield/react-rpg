@@ -6,6 +6,7 @@ const ReactRpgPhoto = ({ url, width, padding, link = url }) => {
       display: 'inline-block',
       width: `${width}%`,
       boxSizing: 'border-box',
+      float: 'left',
       padding,
     },
     imageWrapper: {
