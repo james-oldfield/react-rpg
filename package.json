@@ -1,6 +1,6 @@
 {
   "name": "react-rpg",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "A React component for responsive photo grids in square aspect ratio",
   "keywords": [
     "responsive images",
