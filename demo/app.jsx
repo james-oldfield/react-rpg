@@ -38,6 +38,7 @@ class App extends React.Component {
    */
   imagePopup(url, obj) {
     this.setState({ popUp: url });
+    console.log(obj);
     setTimeout(() => this.setState({ popUp: false }), 1000);
   }
 

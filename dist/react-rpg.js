@@ -54,7 +54,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	module.exports = {
 	  ReactRpg: __webpack_require__(1)
@@ -140,50 +140,46 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var url = _ref.url;
 	  var width = _ref.width;
 	  var padding = _ref.padding;
-	  var _ref$link = _ref.link;
-	  var link = _ref$link === undefined ? url : _ref$link;
 	  var _ref$clickHandler = _ref.clickHandler;
 	  var clickHandler = _ref$clickHandler === undefined ? null : _ref$clickHandler;
-	  return (function () {
-	    var pointer = clickHandler ? 'pointer' : 'auto';
 	
-	    var styles = {
-	      imageGridItem: {
-	        display: 'inline-block',
-	        width: width + '%',
-	        boxSizing: 'border-box',
-	        float: 'left',
-	        padding: padding
-	      },
-	      imageWrapper: {
-	        position: 'relative',
-	        width: '100%',
-	        paddingBottom: '100%',
-	        backgroundImage: 'url(' + url + ')',
-	        backgroundSize: 'cover',
-	        backgroundPosition: 'center center',
-	        backgroundRepeat: 'no-repeat',
-	        cursor: pointer
-	      }
-	    };
+	  var pointer = clickHandler ? 'pointer' : 'auto';
 	
-	    return _react2['default'].createElement(
-	      'div',
-	      { className: 'imageGridItem', style: styles.imageGridItem },
-	      _react2['default'].createElement(
-	        'a',
-	        { onClick: clickHandler ? clickHandler.bind(undefined, url) : null },
-	        _react2['default'].createElement('div', { className: 'imageWrapper', style: styles.imageWrapper })
-	      )
-	    );
-	  })();
+	  var styles = {
+	    imageGridItem: {
+	      display: 'inline-block',
+	      width: width + '%',
+	      boxSizing: 'border-box',
+	      float: 'left',
+	      padding: padding
+	    },
+	    imageWrapper: {
+	      position: 'relative',
+	      width: '100%',
+	      paddingBottom: '100%',
+	      backgroundImage: 'url(' + url + ')',
+	      backgroundSize: 'cover',
+	      backgroundPosition: 'center center',
+	      backgroundRepeat: 'no-repeat',
+	      cursor: pointer
+	    }
+	  };
+	
+	  return _react2['default'].createElement(
+	    'div',
+	    { className: 'imageGridItem', style: styles.imageGridItem },
+	    _react2['default'].createElement(
+	      'a',
+	      { onClick: clickHandler ? clickHandler.bind(undefined, url) : null },
+	      _react2['default'].createElement('div', { className: 'imageWrapper', style: styles.imageWrapper })
+	    )
+	  );
 	};
 	
 	ReactRpgPhoto.propTypes = {
 	  url: _react2['default'].PropTypes.string.isRequired,
 	  width: _react2['default'].PropTypes.number.isRequired,
 	  padding: _react2['default'].PropTypes.number,
-	  link: _react2['default'].PropTypes.string,
 	  clickHandler: _react2['default'].PropTypes.func
 	};
 	

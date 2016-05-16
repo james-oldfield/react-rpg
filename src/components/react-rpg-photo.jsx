@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ReactRpgPhoto = ({ url, width, padding, link = url, clickHandler = null }) => {
+const ReactRpgPhoto = ({ url, width, padding, clickHandler = null }) => {
   const pointer = clickHandler ? 'pointer' : 'auto';
 
   const styles = {
@@ -36,7 +36,6 @@ ReactRpgPhoto.propTypes = {
   url: React.PropTypes.string.isRequired,
   width: React.PropTypes.number.isRequired,
   padding: React.PropTypes.number,
-  link: React.PropTypes.string,
   clickHandler: React.PropTypes.func,
 };
 

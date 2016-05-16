@@ -1,25 +1,20 @@
-/**
- * Client tests
- */
-import React from "react";
-import Component from "src/components/react-rpg";
-// Use `TestUtils` to inject into DOM, simulate events, etc.
-// See: https://facebook.github.io/react/docs/test-utils.html
-import TestUtils from "react-addons-test-utils";
+import React from 'react';
+import ReactRpg from 'src/components/react-rpg';
+import ReactRpgPhoto from 'src/components/react-rpg-photo';
+import TestUtils from 'react-addons-test-utils';
 
-describe("components/react-rpg", () => {
+const renderer = TestUtils.createRenderer();
+renderer.render(
+  <ReactRpg imagesArray={[{ url: 'http://im.vsco.co/1/52d992e43ad70287923/55fd92ce5668547a8473d1d9/vsco_091915.jpg?w=690&dpr=2' }]} padding={50} columns={3} />
+);
+const output = renderer.getRenderOutput();
 
-  it("has expected content with deep render", () => {
-    // This is a "deep" render that renders children + all into an actual
-    // browser DOM node.
-    //
-    // https://facebook.github.io/react/docs/test-utils.html#renderintodocument
-    const rendered = TestUtils.renderIntoDocument(<Component />);
+describe('components/react-rpg', () => {
+  it('is of type div', () => {
+    expect(output.type).to.equal('div');
+  });
 
-    // This is a real DOM node to assert on.
-    const divNode = TestUtils
-      .findRenderedDOMComponentWithTag(rendered, "div");
-
-    expect(divNode).to.have.property("innerHTML", "");
+  it('has class imageGrid', () => {
+    expect(output.props.className).to.equal('imageGrid');
   });
 });
