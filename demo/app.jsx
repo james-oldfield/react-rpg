@@ -60,7 +60,7 @@ class App extends React.Component {
     return (
       <div className="demo">
         <h1><a href="https://github.com/James-Oldfield/react-rpg">react-rpg</a></h1>
-        <h2>react responsive photo grid</h2>
+        <h2>react responsive photo grid <span className="version">v1.0</span></h2>
         <p>adjust padding:</p>
           <input type="range" min="0" max="100" className="paddingController" value={this.state.padding} onChange={this.paddingChanged.bind(this)} />
         <p>adjust colums:</p>
