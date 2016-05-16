@@ -17,4 +17,3 @@ describe('components/react-rpg-photo', () => {
     expect(output.props.className).to.equal('imageGridItem');
   });
 });
-
