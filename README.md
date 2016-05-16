@@ -1,4 +1,4 @@
-react-rpg :camera: v2.0
+react-rpg :camera:
 ===========================
 ## what
 **react-rpg** is a lightweight, no-nonsense **responsive photo grid** component for reactjs.
@@ -11,7 +11,7 @@ The component renders an array of images in square aspect-ratio for the modern, 
 
 **react-rpg** replicates a similar grid photo structure to that which Instagram implements with their webapp.
 
-### v2.0
+### v1.0
 
 **N.B**: The `link` prop is depreciated - instead, pass a callback function to the `clickHandler` prop. This function receives the URL and React's synthetic event object for your disposal.
 
