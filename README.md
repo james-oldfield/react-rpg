@@ -1,4 +1,4 @@
-react-rpg :camera:
+react-rpg :camera: v2.0
 ===========================
 ## what
 **react-rpg** is a lightweight, no-nonsense **responsive photo grid** component for reactjs.
@@ -11,6 +11,10 @@ The component renders an array of images in square aspect-ratio for the modern, 
 
 **react-rpg** replicates a similar grid photo structure to that which Instagram implements with their webapp.
 
+### v2.0
+
+**N.B**: The `link` prop is depreciated - instead, pass a callback function to the `clickHandler` prop. This function receives the URL and React's synthetic event object for your disposal.
+
 ## how
 
 To use in a react project, first, install via npm:
@@ -19,33 +23,35 @@ To use in a react project, first, install via npm:
 
 Then require wherever you desire and pass it an array of image objects as props. See `./demo` for a more thorough example.
 
-    ...
-    import { ReactRpg } from 'react-rpg';
+```js
+...
+import { ReactRpg } from 'react-rpg';
 
-    const images = [
-      {
-        url: "absolute url to the src of the image",
-        link: "absolute url of what to link to"
-      },
-      {
-        url: "http://images.com/myimage.jpg",
-        link: "http://images.com/go-to-me-on-click.html"
-      }
-    ];
+const images = [
+  {
+    url: "absolute url to the src of the image",
+    clickHandler: (url, obj) => { console.log(url) }
+  },
+  {
+    url: "http://images.com/myimage.jpg",
+    clickHandler: (url, obj) => { console.log(obj) }
+  }
+];
 
 
-    class App extends React.Component {
-      render() {
-        return (
-          <div className="myApp">
-            <ReactRpg imagesArray={images} columns={3} padding={10} />
-          </div>
-        );
-      }
-    }
+class App extends React.Component {
+  render() {
+    return (
+      <div className="myApp">
+        <ReactRpg imagesArray={images} columns={3} padding={10} />
+      </div>
+    );
+  }
+}
+```
 
 ### Props
-- `imagesArray` (array, default [], required **YES**) - An Array of objects containing *url* property of the absolute url of the photos. Can also pass an optional `link` property that will pass into an `<a href="link">` tag around the image.
+- `imagesArray` (array, default [], required **YES**) - An Array of objects containing *url* property of the absolute url of the photos for the `img`'s `src` attribute. Can also pass an optional `clickHandler` callback function prop.
 - `columns` (number, default 3, required **NO**) - Sets the number of columns for the photo grid.
 - `padding` (number, default 0, required **NO**) - Sets the padding value in *px* around the images.
 
@@ -55,6 +61,3 @@ There's a few react components that attempt a photo grid component but none seem
 
 Scaffolded with [Formidable Labs' component boilerplate](https://github.com/FormidableLabs/formidable-react-component-boilerplate), thanks!
 
-### COMING SOON:
-- `shallowRender` tests
-- Potentially to make column count a function of browser width for single column on small devices etc: Depending on computation cost of checking browser width all the time.

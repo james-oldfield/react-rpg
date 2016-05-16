@@ -6,7 +6,7 @@ const ReactRpg = ({ imagesArray, padding, columns = 3 }) => {
 
   const imageNodes = imagesArray.map((arr, index) => {
     return (
-      <ReactRpgPhoto key={index} url={arr.url} link={arr.link} width={width} padding={padding}/>
+      <ReactRpgPhoto key={index} url={arr.url} width={width} padding={padding} clickHandler={arr.clickHandler} />
     );
   });
 
@@ -21,10 +21,12 @@ ReactRpg.propTypes = {
   imagesArray: React.PropTypes.array.isRequired,
   columns: React.PropTypes.number,
   padding: React.PropTypes.number,
+  clickHandler: React.PropTypes.func,
 };
 
 ReactRpg.defaultProps = {
   imagesArray: [],
+  clickHandler: null,
 };
 
 export default ReactRpg;

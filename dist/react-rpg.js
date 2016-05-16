@@ -89,7 +89,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var width = Math.floor(100 / columns);
 	
 	  var imageNodes = imagesArray.map(function (arr, index) {
-	    return _react2['default'].createElement(_reactRpgPhoto2['default'], { key: index, url: arr.url, link: arr.link, width: width, padding: padding });
+	    return _react2['default'].createElement(_reactRpgPhoto2['default'], { key: index, url: arr.url, width: width, padding: padding, clickHandler: arr.clickHandler });
 	  });
 	
 	  return _react2['default'].createElement(
@@ -102,11 +102,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	ReactRpg.propTypes = {
 	  imagesArray: _react2['default'].PropTypes.array.isRequired,
 	  columns: _react2['default'].PropTypes.number,
-	  padding: _react2['default'].PropTypes.number
+	  padding: _react2['default'].PropTypes.number,
+	  clickHandler: _react2['default'].PropTypes.func
 	};
 	
 	ReactRpg.defaultProps = {
-	  imagesArray: []
+	  imagesArray: [],
+	  clickHandler: null
 	};
 	
 	exports['default'] = ReactRpg;
@@ -140,7 +142,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var padding = _ref.padding;
 	  var _ref$link = _ref.link;
 	  var link = _ref$link === undefined ? url : _ref$link;
+	  var _ref$clickHandler = _ref.clickHandler;
+	  var clickHandler = _ref$clickHandler === undefined ? null : _ref$clickHandler;
 	  return (function () {
+	    var pointer = clickHandler ? 'pointer' : 'auto';
+	
 	    var styles = {
 	      imageGridItem: {
 	        display: 'inline-block',
@@ -156,7 +162,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	        backgroundImage: 'url(' + url + ')',
 	        backgroundSize: 'cover',
 	        backgroundPosition: 'center center',
-	        backgroundRepeat: 'no-repeat'
+	        backgroundRepeat: 'no-repeat',
+	        cursor: pointer
 	      }
 	    };
 	
@@ -165,7 +172,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      { className: 'imageGridItem', style: styles.imageGridItem },
 	      _react2['default'].createElement(
 	        'a',
-	        { href: link },
+	        { onClick: clickHandler ? clickHandler.bind(undefined, url) : null },
 	        _react2['default'].createElement('div', { className: 'imageWrapper', style: styles.imageWrapper })
 	      )
 	    );
@@ -176,7 +183,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  url: _react2['default'].PropTypes.string.isRequired,
 	  width: _react2['default'].PropTypes.number.isRequired,
 	  padding: _react2['default'].PropTypes.number,
-	  link: _react2['default'].PropTypes.string
+	  link: _react2['default'].PropTypes.string,
+	  clickHandler: _react2['default'].PropTypes.func
 	};
 	
 	exports['default'] = ReactRpgPhoto;
