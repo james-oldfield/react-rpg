@@ -82,33 +82,35 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var ReactRpg = function ReactRpg(_ref) {
 	  var imagesArray = _ref.imagesArray;
-	  var padding = _ref.padding;
+	  var _ref$padding = _ref.padding;
+	  var padding = _ref$padding === undefined ? 0 : _ref$padding;
 	  var _ref$columns = _ref.columns;
-	  var columns = _ref$columns === undefined ? 3 : _ref$columns;
-	
-	  var width = Math.floor(100 / columns);
+	  var columns = _ref$columns === undefined ? [1, 2, 3] : _ref$columns;
 	
 	  var imageNodes = imagesArray.map(function (arr, index) {
-	    return _react2['default'].createElement(_reactRpgPhoto2['default'], { key: index, url: arr.url, width: width, padding: padding, clickHandler: arr.clickHandler });
+	    return _react2['default'].createElement(_reactRpgPhoto2['default'], { key: index, url: arr.url, columns: columns, padding: padding, clickHandler: arr.clickHandler });
 	  });
+	
+	  var cssBreakpoints = '\n    .imageGridItem { width: ' + Math.floor(100 / columns[0]) + '%; }\n\n    @media only screen and (min-width : 480px) {\n      .imageGridItem { width: ' + Math.floor(100 / columns[1]) + '%; }\n    }\n    @media only screen and (min-width : 992px) {\n      .imageGridItem { width: ' + Math.floor(100 / columns[2]) + '%; }\n    }\n  ';
 	
 	  return _react2['default'].createElement(
 	    'div',
 	    { className: 'imageGrid' },
+	    _react2['default'].createElement('style', { dangerouslySetInnerHTML: { __html: cssBreakpoints } }),
 	    imageNodes
 	  );
 	};
 	
 	ReactRpg.propTypes = {
 	  imagesArray: _react2['default'].PropTypes.array.isRequired,
-	  columns: _react2['default'].PropTypes.number,
-	  padding: _react2['default'].PropTypes.number,
-	  clickHandler: _react2['default'].PropTypes.func
+	  columns: _react2['default'].PropTypes.array,
+	  padding: _react2['default'].PropTypes.number
 	};
 	
 	ReactRpg.defaultProps = {
 	  imagesArray: [],
-	  clickHandler: null
+	  columns: [1, 2, 3],
+	  padding: 0
 	};
 	
 	exports['default'] = ReactRpg;
@@ -138,7 +140,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var ReactRpgPhoto = function ReactRpgPhoto(_ref) {
 	  var url = _ref.url;
-	  var width = _ref.width;
 	  var padding = _ref.padding;
 	  var _ref$clickHandler = _ref.clickHandler;
 	  var clickHandler = _ref$clickHandler === undefined ? null : _ref$clickHandler;
@@ -148,7 +149,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var styles = {
 	    imageGridItem: {
 	      display: 'inline-block',
-	      width: width + '%',
 	      boxSizing: 'border-box',
 	      float: 'left',
 	      padding: padding
@@ -178,7 +178,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	ReactRpgPhoto.propTypes = {
 	  url: _react2['default'].PropTypes.string.isRequired,
-	  width: _react2['default'].PropTypes.number.isRequired,
 	  padding: _react2['default'].PropTypes.number,
 	  clickHandler: _react2['default'].PropTypes.func
 	};

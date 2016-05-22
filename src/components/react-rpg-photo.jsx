@@ -1,12 +1,11 @@
 import React from 'react';
 
-const ReactRpgPhoto = ({ url, width, padding, clickHandler = null }) => {
+const ReactRpgPhoto = ({ url, padding, clickHandler = null }) => {
   const pointer = clickHandler ? 'pointer' : 'auto';
 
   const styles = {
     imageGridItem: {
       display: 'inline-block',
-      width: `${width}%`,
       boxSizing: 'border-box',
       float: 'left',
       padding,
@@ -34,7 +33,6 @@ const ReactRpgPhoto = ({ url, width, padding, clickHandler = null }) => {
 
 ReactRpgPhoto.propTypes = {
   url: React.PropTypes.string.isRequired,
-  width: React.PropTypes.number.isRequired,
   padding: React.PropTypes.number,
   clickHandler: React.PropTypes.func,
 };

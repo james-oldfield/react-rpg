@@ -60,15 +60,15 @@ class App extends React.Component {
     return (
       <div className="demo">
         <h1><a href="https://github.com/James-Oldfield/react-rpg">react-rpg</a></h1>
-        <h2>react responsive photo grid <span className="version">v1.0</span></h2>
+        <h2>react responsive photo grid <span className="version">v2.0</span></h2>
         <p>adjust padding:</p>
           <input type="range" min="0" max="100" className="paddingController" value={this.state.padding} onChange={this.paddingChanged.bind(this)} />
-        <p>adjust colums:</p>
+        <p>adjust columns at desktop breakpoint:</p>
           <input type="range" min="1" max="10" className="columsController" value={this.state.columns} onChange={this.columnsChanged.bind(this)} />
 
           { this.state.popUp !== false ? <ImagePreview url={this.state.popUp} /> : null }
 
-        <ReactRpg imagesArray={this.getImages()} columns={this.state.columns} padding={this.state.padding} />
+        <ReactRpg imagesArray={this.getImages()} columns={[1, 2, this.state.columns]} padding={this.state.padding} />
       </div>
     );
   }
