@@ -5,7 +5,7 @@ import TestUtils from 'react-addons-test-utils';
 
 const renderer = TestUtils.createRenderer();
 renderer.render(
-  <ReactRpg imagesArray={[{ url: 'http://im.vsco.co/1/52d992e43ad70287923/55fd92ce5668547a8473d1d9/vsco_091915.jpg?w=690&dpr=2' }]} padding={50} columns={3} />
+  <ReactRpg imagesArray={[{ url: 'http://im.vsco.co/1/52d992e43ad70287923/55fd92ce5668547a8473d1d9/vsco_091915.jpg?w=690&dpr=2' }]} text="i am imagehover" padding={50} columns={3} />
 );
 const output = renderer.getRenderOutput();
 

@@ -44,15 +44,15 @@ class App extends React.Component {
 
   getImages() {
     return [
-      { url: 'http://james-oldfield.github.io/thailand/images/girl.adc2e72a.jpg', clickHandler: this.imagePopup.bind(this) },
-      { url: 'http://james-oldfield.github.io/thailand/images/RecliningBuddha.a1705a9a.jpg', clickHandler: this.imagePopup.bind(this) },
-      { url: 'http://im.vsco.co/1/52d992e43ad70287923/545e7da07267083a1e8b4662/vsco_110814.jpg?w=709&dpr=2', clickHandler: this.imagePopup.bind(this) },
-      { url: 'http://im.vsco.co/1/52d992e43ad70287923/53ab2a567167083b658b45df/vsco_062514.jpg?w=300&dpr=2', clickHandler: this.imagePopup.bind(this) },
-      { url: 'http://im.vsco.co/1/52d992e43ad70287923/53ab2a3a74670831708b4749/vsco_062514.jpg?w=300&dpr=2', clickHandler: this.imagePopup.bind(this) },
-      { url: 'http://im.vsco.co/1/52d992e43ad70287923/53ab26fd75670897318b464c/vsco_062514.jpg?w=300&dpr=2', clickHandler: this.imagePopup.bind(this) },
-      { url: 'http://im.vsco.co/1/52d992e43ad70287923/53ab27657467082f588b4939/vsco_062514.jpg?w=300&dpr=2', clickHandler: this.imagePopup.bind(this) },
-      { url: 'http://im.vsco.co/1/52d992e43ad70287923/53ab26b87267089b1d8b456f/vsco_062514.jpg?w=300&dpr=2', clickHandler: this.imagePopup.bind(this) },
-      { url: 'http://im.vsco.co/1/52d992e43ad70287923/545e7bab7567081e158b4575/vsco_110814.jpg?w=300&dpr=2', clickHandler: this.imagePopup.bind(this) },
+      { url: 'http://james-oldfield.github.io/thailand/images/girl.adc2e72a.jpg', text:"heii", clickHandler: this.imagePopup.bind(this) },
+      { url: 'http://james-oldfield.github.io/thailand/images/RecliningBuddha.a1705a9a.jpg', text:"hello", clickHandler: this.imagePopup.bind(this) },
+      { url: 'http://im.vsco.co/1/52d992e43ad70287923/545e7da07267083a1e8b4662/vsco_110814.jpg?w=709&dpr=2', text:"welcome", clickHandler: this.imagePopup.bind(this) },
+      { url: 'http://im.vsco.co/1/52d992e43ad70287923/53ab2a567167083b658b45df/vsco_062514.jpg?w=300&dpr=2', text:"this is", clickHandler: this.imagePopup.bind(this) },
+      { url: 'http://im.vsco.co/1/52d992e43ad70287923/53ab2a3a74670831708b4749/vsco_062514.jpg?w=300&dpr=2', text:"hddd", clickHandler: this.imagePopup.bind(this) },
+      { url: 'http://im.vsco.co/1/52d992e43ad70287923/53ab26fd75670897318b464c/vsco_062514.jpg?w=300&dpr=2', text:"hver", clickHandler: this.imagePopup.bind(this) },
+      { url: 'http://im.vsco.co/1/52d992e43ad70287923/53ab27657467082f588b4939/vsco_062514.jpg?w=300&dpr=2', text:"long tesetsdfasdfsdf", clickHandler: this.imagePopup.bind(this) },
+      { url: 'http://im.vsco.co/1/52d992e43ad70287923/53ab26b87267089b1d8b456f/vsco_062514.jpg?w=300&dpr=2', text:"this", clickHandler: this.imagePopup.bind(this) },
+      { url: 'http://im.vsco.co/1/52d992e43ad70287923/545e7bab7567081e158b4575/vsco_110814.jpg?w=300&dpr=2', text:"hsdddkkdd", clickHandler: this.imagePopup.bind(this) },
     ];
   }
 

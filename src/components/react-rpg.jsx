@@ -4,7 +4,7 @@ import ReactRpgPhoto from './react-rpg-photo';
 const ReactRpg = ({ imagesArray, padding = 0, columns = [1, 2, 3] }) => {
   const imageNodes = imagesArray.map((arr, index) => {
     return (
-      <ReactRpgPhoto key={index} url={arr.url} columns={columns} padding={padding} clickHandler={arr.clickHandler} />
+      <ReactRpgPhoto key={index} url={arr.url} text={arr.text} columns={columns} padding={padding} clickHandler={arr.clickHandler} />
     );
   });
 
